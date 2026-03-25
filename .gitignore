@@ -1,4 +1,7 @@
 *.sublime-workspace
+*.zip
+*.ini
+*.inf
 node_modules
 bower_components
 test

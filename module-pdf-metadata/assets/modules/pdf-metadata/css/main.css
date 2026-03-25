@@ -1,0 +1,187 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/NunitoSans-Regular.woff2") format("woff2"), url("fonts/NunitoSans-Regular.woff") format("woff"), url("fonts/NunitoSans-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #927DFC;
+}
+
+.wrapper {
+  width: 655px !important;
+  height: 288px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 9px;
+  transition: height 0.2s ease;
+}
+
+.wrapper .upload-box {
+  height: 225px;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #afafaf;
+}
+
+.wrapper .upload-box p {
+  position: relative;
+  font-size: 1.06rem;
+  margin-top: 20px;
+}
+
+.wrapper .upload-box p::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.wrapper .content {
+  display: none;
+  margin-top: 28px;
+  pointer-events: none;
+}
+
+.wrapper .content .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.wrapper .content .row .column {
+  width: calc(100% / 2 - 15px);
+}
+
+.wrapper .meta .column {
+  margin-bottom: 10px;
+}
+
+.wrapper .meta .column:last-child {
+  margin-bottom: 0px;
+}
+
+.wrapper .meta .column label {
+  display: block;
+  font-size: 1.06rem;
+  width: 100%;
+}
+
+.wrapper .meta .column input,
+.wrapper .meta .column textarea {
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 1.06rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.wrapper .meta .column input:focus,
+.wrapper .meta .column textarea:focus {
+  padding: 0 14px;
+  border: 2px solid #927DFC;
+}
+
+.wrapper .meta .column input {
+  height: 49px;
+}
+
+.wrapper .meta .column textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.wrapper.active {
+  height: auto;
+}
+
+.wrapper.active .upload-box {
+  display: none;
+}
+
+.wrapper.active .content {
+  display: block;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.wrapper.hover {
+  background-color: #979797;
+}
+
+.wrapper.hover .upload-box {
+  border: 2px dashed #ebebeb;
+}
+
+.wrapper.hover .upload-box p {
+  color: #ffffff;
+}
+
+.wrapper.hover .error {
+  background-color: #ff0000;
+}
+
+.wrapper.hover .error .upload-box {
+  border: 2px dashed #ffffff;
+}
+
+.wrapper.hover .error .upload-box p {
+  color: #ffffff;
+}
+
+.wrapper.hover .error .upload-box p::after {
+  content: "ОШИБКА ЗАГРУЖАЕМОГО ТИПА ФАЙЛА";
+}
+
+.wrapper .buttons .column {
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.06rem;
+  border-radius: 5px;
+  padding: 15px 0;
+  margin: 30px 0 10px;
+}
+
+.wrapper .buttons .download-btn {
+  background: #927DFC;
+  color: #ffffff;
+  box-shadow: inset 0 0 1px 2px #927dfc;
+}
+
+.wrapper .buttons .cancel-btn {
+  background: #ffffff;
+  color: #927dfc;
+  box-shadow: inset 0 0 1px 2px #927dfc;
+}

@@ -29,8 +29,6 @@ $params = $modx->event->params;
 $module = getModule();
 // Иконка
 $module["icon"] = trim($module["icon"]) ? trim($module["icon"]) : "fa fa-cube";
-$mod_path = str_replace('\\','/',dirname(__FILE__)) . '/';
-$path = preg_replace('@^' . preg_quote(MODX_BASE_PATH) . '@', "/", $mod_path);
 
 ob_start();
 include_once MODX_MANAGER_PATH . 'includes/header.inc.php';

@@ -5,5 +5,19 @@
 			"name": "Модуль Evolution CMS для редактирования метаданных PDF файла",
 			"path": "."
 		}
+	],
+	"settings":  {
+		"default_line_ending": "unix",
+		"show_line_endings": true,
+		"font_size": 16,
+		"tab_size": 4
+	},
+	"build_systems": [
+		{
+			"name": "Запуск сборки проекта",
+			"working_dir": "${project_path}",
+			"cmd": ["start", "/wait", "grunt", "-v"],
+			"shell": true
+		}
 	]
 }

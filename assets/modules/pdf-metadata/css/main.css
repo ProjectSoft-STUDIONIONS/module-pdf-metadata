@@ -1,0 +1,219 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/modules/pdf-metadata/fonts/NunitoSans-Regular.woff2") format("woff2"), url("/assets/modules/pdf-metadata/fonts/NunitoSans-Regular.woff") format("woff"), url("/assets/modules/pdf-metadata/fonts/NunitoSans-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.pagetitle {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  box-shadow: 0 0 15px 0px #515151;
+}
+
+.body-wapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 655px;
+  width: 97%;
+  height: 288px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 9px;
+  transition: height 0.2s ease;
+  box-shadow: 0 0 6px #515151;
+}
+
+.wrapper .upload-box {
+  height: 225px;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #afafaf;
+}
+
+.wrapper .upload-box p {
+  position: relative;
+  font-size: 1.06rem;
+  margin-top: 20px;
+}
+
+.wrapper .upload-box p::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.wrapper .content {
+  display: none;
+  pointer-events: none;
+}
+
+.wrapper .content .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.wrapper .content .row .column {
+  width: calc(100% / 2 - 15px);
+}
+
+.wrapper .meta .column {
+  margin-bottom: 10px;
+}
+
+.wrapper .meta .column:last-child {
+  margin-bottom: 0px;
+}
+
+.wrapper .meta .column label {
+  display: block;
+  font-size: 1.06rem;
+  width: 100%;
+  font-weight: 700;
+  color: #000;
+}
+
+.wrapper .meta .column input,
+.wrapper .meta .column textarea {
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 1.06rem;
+  border-radius: 4px;
+  border: 1px solid #afafaf;
+}
+
+.wrapper .meta .column input:focus,
+.wrapper .meta .column textarea:focus {
+  padding: 0 14px;
+  border: 2px solid #927DFC;
+}
+
+.wrapper .meta .column input {
+  height: 49px;
+}
+
+.wrapper .meta .column textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.wrapper.active {
+  height: auto;
+}
+
+.wrapper.active .upload-box {
+  display: none;
+}
+
+.wrapper.active .content {
+  display: block;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.wrapper.hover {
+  background-color: #979797;
+}
+
+.wrapper.hover .upload-box {
+  border: 2px dashed #ebebeb;
+}
+
+.wrapper.hover .upload-box * {
+  pointer-events: none;
+}
+
+.wrapper.hover .upload-box p {
+  color: #fff;
+}
+
+.wrapper.hover.error {
+  background-color: #f00;
+}
+
+.wrapper.hover.error .upload-box {
+  border: 2px dashed #fff;
+}
+
+.wrapper.hover.error .upload-box p {
+  color: #fff;
+}
+
+.wrapper.hover.error .upload-box p::after {
+  content: "ОШИБКА ЗАГРУЖАЕМОГО ТИПА ФАЙЛА";
+}
+
+.wrapper .buttons .column {
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.06rem;
+  border-radius: 5px;
+  padding: 15px 10px;
+  margin: 30px 0 10px;
+}
+
+.wrapper .buttons .download-btn {
+  background-color: #927DFC;
+  color: #fff;
+  box-shadow: inset 0 0 1px 2px #927DFC;
+}
+
+.wrapper .buttons .cancel-btn {
+  background-color: #fff;
+  color: #927DFC;
+  box-shadow: inset 0 0 1px 2px #927DFC;
+}
+
+.wrapper button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
