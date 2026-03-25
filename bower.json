@@ -1,0 +1,17 @@
+{
+	"name": "module-pdf-metadata",
+	"description": "Модуль Evolution CMS для редактирования метаданных PDF файла",
+	"main": "Gruntfile.js",
+	"authors": [
+		"ProjectSoft <projectsoft2009@yandex.ru>"
+	],
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
