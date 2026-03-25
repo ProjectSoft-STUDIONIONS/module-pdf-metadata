@@ -18,7 +18,6 @@ module.exports = function(grunt) {
 				"group_css_media_queries",
 				"cssmin",
 				"replace",
-				"encoding",
 				"compress",
 			],
 		};
@@ -37,20 +36,6 @@ module.exports = function(grunt) {
 				'module-pdf-metadata.zip',
 			],
 		},
-		encoding: {
-			options: {
-				encoding: 'UTF-8',
-				iconv: 'C:/Program Files/gettext/bin/iconv.exe',
-			},
-			files: {
-				src: [
-					'install/**/*.tpl',
-					'assets/**/*.css',
-					'assets/**/*.php',
-					'assets/**/*.svg',
-				],
-			},
-  		},
 		copy: {
 			js: {
 				expand: true,
