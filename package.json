@@ -1,6 +1,6 @@
 {
 	"name": "module-pdf-metadata",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Модуль Evolution CMS для редактирования метаданных PDF файла",
 	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata#readme",
 	"bugs": {
