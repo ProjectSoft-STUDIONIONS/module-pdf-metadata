@@ -10,6 +10,13 @@
 		"type": "git",
 		"url": "git+https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata.git"
 	},
+	"keywords": [
+		"evolutioncms",
+		"evolution-cms",
+		"module",
+		"pdf-metadata",
+		"pdf-metadata-editor"
+	],
 	"license": "GPL-3.0",
 	"author": "ProjectSoft <projectsoft2009@yandex.ru>",
 	"type": "commonjs",
