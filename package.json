@@ -15,6 +15,9 @@
 	"type": "commonjs",
 	"main": "Gruntfile.js",
 	"scripts": {
+		"inst": "npm i",
+		"build": "grunt -v",
+		"preinstall": "npm i -g less bower && bower install",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
@@ -26,11 +29,9 @@
 		"grunt-contrib-copy": "^1.0.0",
 		"grunt-contrib-cssmin": "^5.0.0",
 		"grunt-contrib-less": "^3.0.0",
-		"grunt-contrib-requirejs": "^1.0.0",
 		"grunt-contrib-uglify-es": "^3.3.0",
 		"grunt-group-css-media-queries": "^1.0.1",
 		"grunt-replace": "^2.0.2",
-		"less": "^4.2.0",
 		"load-grunt-tasks": "^5.1.0",
 		"md5": "^2.3.0",
 		"pdf-lib": "^1.17.1",
