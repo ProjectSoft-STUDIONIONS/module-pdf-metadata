@@ -1,5 +1,6 @@
 <?php
 $lang_module = array(
+	"pdf_meta_title"                => "Редактирование метаданных PDF файла",
 	"pdf_meta_description"          => "Модуль Evolution CMS для редактирования метаданных PDF файла",
 	"pdf_meta_upload_text"          => "Загрузите PDF",
 	"pdf_meta_meta_title"           => "Заголовок",
