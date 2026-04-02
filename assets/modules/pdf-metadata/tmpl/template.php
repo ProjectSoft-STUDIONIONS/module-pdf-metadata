@@ -12,7 +12,7 @@ $pdf_hash = filemtime( $mod_path . "js/pdf-lib.min.js" );
 $mod_path = filemtime( $mod_path . "js/main.min.js"    );
 ?>
 <link rel="stylesheet" type="text/css" href="<?= $path; ?>css/main.min.css?<?= $css_hash; ?>">
-<h1 class="pagetitle"><span class="pagetitle-icon"><i class="<?= $module["icon"];?>"></i></span><span class="pagetitle-text"><?= $module["name"];?></span></h1>
+<h1 class="pagetitle"><span class="pagetitle-icon"><i class="<?= $module["icon"];?>"></i></span><span class="pagetitle-text"><?= $lang_module["pdf_meta_title"];?></span></h1>
 <div class="body-wapper">
 	<div class="wrapper">
 		<div class="upload-box">
