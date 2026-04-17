@@ -4,7 +4,7 @@
  * Модуль Evolution CMS для редактирования метаданных PDF файла.
  *
  * @category     module
- * @version      1.0.2
+ * @version      1.0.3
  * @internal     @modx_category Manager and Admin
  * @internal     @properties
  * @internal     @icon fa fa-file-pdf
@@ -21,7 +21,7 @@
  * Модуль Evolution CMS для редактирования метаданных PDF файла.
  *
  * @category     module
- * @version      1.0.2
+ * @version      1.0.3
  * @internal     @modx_category Manager and Admin
  * @internal     @properties
  * @internal     @icon fa fa-file-pdf
