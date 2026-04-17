@@ -41,6 +41,11 @@ footer,
 
 .pagetitle {
 	pointer-events: none;
+	margin-bottom: 1.6rem;
+}
+
+footer {
+	margin-top: 1.6rem;
 }
 
 footer p {
@@ -64,21 +69,28 @@ footer p {
 .wrapper {
 	max-width: 655px;
 	width: 97%;
-	height: 288px;
+	min-height: 415px;
 	padding: 30px;
 	background-color: @white;
 	border-radius: 9px;
 	transition: height 0.2s ease;
 	box-shadow: 0 0 6px @box-shadow;
+	transition: unset;
+	display: flex;
+	flex-direction: column;
+	.upload-box,
+	.content {
+		border-radius: 5px;
+		border: 2px dashed #afafaf;
+		flex: 1 0 auto;
+	}
 	.upload-box {
-		height: 225px;
+		//height: 225px;
 		display: flex;
 		cursor: pointer;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		border-radius: 5px;
-		border: 2px dashed @upload-border;
 		user-select: none;
 		p {
 			position: relative;
@@ -100,6 +112,7 @@ footer p {
 	.content {
 		display: none;
 		pointer-events: none;
+		padding: 1rem;
 		.row {
 			display: flex;
 			justify-content: space-between;
@@ -112,19 +125,42 @@ footer p {
 	.meta {
 		.column {
 			margin-bottom: 10px;
+			position: relative;
 			&:last-child {
 				margin-bottom: 0px;
 			}
 			label {
-				display: block;
 				font-size: 1.06rem;
-				width: 100%;
+				background-color: transparent;
 				font-weight: 700;
 				color: @black;
 				user-select: none;
+				position: absolute;
+				pointer-events: none;
+				z-index: 10;
+				top: 1rem;
+				left: 1rem;
+				line-height: 1;
+				white-space: nowrap;
+				margin: unset;
+				margin-bottom: unset;
+				transition: top .3s ease, font-size .3s ease;
 			}
 			input {
 				height: 49px;
+				&::placeholder {
+					color: transparent !important;
+					user-select: none !important;
+				}
+				&:hover,
+				&:focus,
+				&:not(:placeholder-shown) {
+					~ label {
+						font-size: 0.86rem;
+						top: 0.4rem;
+						background-color: transparent;
+					}
+				}
 			}
 			textarea {
 				min-height: 80px;
@@ -132,14 +168,15 @@ footer p {
 			}
 			input,
 			textarea {
+				display: block;
+				appearance: none;
 				width: 100%;
 				outline: none;
-				padding: 0 15px;
+				padding: 1rem 1rem 0em;
 				font-size: 1.06rem;
 				border-radius: 4px;
-				border: 1px solid @upload-border;
+				border: 2px solid @upload-border;
 				&:focus {
-					padding: 0 14px;
 					border: 2px solid @blue;
 				}
 			}
@@ -147,6 +184,8 @@ footer p {
 	}
 	&.active {
 		height: auto;
+		max-width: 90%;
+		transition: max-width 1s ease;
 		.upload-box {
 			display: none;
 		}

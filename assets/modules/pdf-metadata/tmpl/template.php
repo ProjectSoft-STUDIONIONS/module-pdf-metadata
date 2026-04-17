@@ -23,20 +23,20 @@ $mod_path = filemtime( $mod_path . "js/main.min.js"    );
 		<div class="content">
 			<div class="meta">
 				<div class="column meta-title">
+					<input type="text" id="title" value="" placeholder="<?= $lang_module['pdf_meta_meta_title']; ?>">
 					<label><?= $lang_module['pdf_meta_meta_title']; ?></label>
-					<input type="text" id="title" value="">
 				</div>
 				<div class="column meta-subject">
+					<input type="text" id="subject" value="" placeholder="<?= $lang_module['pdf_meta_meta_subject']; ?>">
 					<label><?= $lang_module['pdf_meta_meta_subject']; ?></label>
-					<input type="text" id="subject" value="">
 				</div>
 				<div class="column meta-keywords">
+					<input type="text" id="keywords" value="" placeholder="<?= $lang_module['pdf_meta_meta_keywords']; ?>">
 					<label><?= $lang_module['pdf_meta_meta_keywords']; ?></label>
-					<input type="text" id="keywords" value="">
 				</div>
 				<div class="column meta-author">
+					<input type="text" id="author" value="" placeholder="<?= $lang_module['pdf_meta_meta_author']; ?>">
 					<label><?= $lang_module['pdf_meta_meta_author']; ?></label>
-					<input type="text" id="author" value="">
 				</div>
 			</div>
 			<div class="row buttons">
