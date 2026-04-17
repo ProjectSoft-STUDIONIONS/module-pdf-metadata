@@ -148,19 +148,6 @@ footer p {
 			}
 			input {
 				height: 49px;
-				&::placeholder {
-					color: transparent !important;
-					user-select: none !important;
-				}
-				&:hover,
-				&:focus,
-				&:not(:placeholder-shown) {
-					~ label {
-						font-size: 0.86rem;
-						top: 0.4rem;
-						background-color: transparent;
-					}
-				}
 			}
 			textarea {
 				min-height: 80px;
@@ -178,6 +165,19 @@ footer p {
 				border: 2px solid @upload-border;
 				&:focus {
 					border: 2px solid @blue;
+				}
+				&::placeholder {
+					color: transparent !important;
+					user-select: none !important;
+				}
+				&:hover,
+				&:focus,
+				&:not(:placeholder-shown) {
+					~ label {
+						font-size: 0.86rem;
+						top: 0.4rem;
+						background-color: transparent;
+					}
 				}
 			}
 		}

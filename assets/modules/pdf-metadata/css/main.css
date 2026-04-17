@@ -173,27 +173,6 @@ footer p {
   height: 49px;
 }
 
-.wrapper .meta .column input:-ms-input-placeholder {
-  color: transparent !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-}
-
-.wrapper .meta .column input::placeholder {
-  color: transparent !important;
-  -webkit-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-}
-
-.wrapper .meta .column input:hover ~ label,
-.wrapper .meta .column input:focus ~ label,
-.wrapper .meta .column input:not(:placeholder-shown) ~ label {
-  font-size: 0.86rem;
-  top: 0.4rem;
-  background-color: transparent;
-}
-
 .wrapper .meta .column textarea {
   min-height: 80px;
   resize: vertical;
@@ -214,6 +193,32 @@ footer p {
 .wrapper .meta .column input:focus,
 .wrapper .meta .column textarea:focus {
   border: 2px solid #927DFC;
+}
+
+.wrapper .meta .column input:-ms-input-placeholder,
+.wrapper .meta .column textarea:-ms-input-placeholder {
+  color: transparent !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.wrapper .meta .column input::placeholder,
+.wrapper .meta .column textarea::placeholder {
+  color: transparent !important;
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.wrapper .meta .column input:hover ~ label,
+.wrapper .meta .column textarea:hover ~ label,
+.wrapper .meta .column input:focus ~ label,
+.wrapper .meta .column textarea:focus ~ label,
+.wrapper .meta .column input:not(:placeholder-shown) ~ label,
+.wrapper .meta .column textarea:not(:placeholder-shown) ~ label {
+  font-size: 0.86rem;
+  top: 0.4rem;
+  background-color: transparent;
 }
 
 .wrapper.active {
