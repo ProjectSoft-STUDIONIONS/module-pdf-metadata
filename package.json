@@ -24,6 +24,7 @@
 	"scripts": {
 		"inst": "npm i",
 		"build": "grunt -v",
+		"page": "grunt -v page",
 		"preinstall": "npm i -g less bower && bower install",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
