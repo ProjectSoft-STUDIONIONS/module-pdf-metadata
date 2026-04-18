@@ -100,6 +100,9 @@ body {
   background-color: #dddddd;
   font-family: 'Montserrat', sans-serif;
   line-height: normal;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body > header,
@@ -187,19 +190,6 @@ body > main {
   background-color: #ffffff;
   box-shadow: 0 0 40px #ccc;
   z-index: 1;
-}
-
-.body-wapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .wrapper {
@@ -451,5 +441,9 @@ body > main {
     box-shadow: unset !important;
     width: 100%;
     max-width: 100%;
+  }
+
+  .wrapper {
+    display: none !important;
   }
 }

@@ -41,6 +41,7 @@ body {
 	background-color: #dddddd;
 	font-family: 'Montserrat', sans-serif;
 	line-height: normal;
+	user-select: none;
 	> header,
 	> main,
 	> footer {
@@ -119,14 +120,6 @@ body {
 			max-width: 100%;
 		}
 	}
-}
-
-.body-wapper {
-	display: flex;
-	flex: 1 0 auto;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 
 .wrapper {
@@ -311,5 +304,8 @@ body {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+	@media print {
+		display: none !important;
 	}
 }
