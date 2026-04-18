@@ -441,14 +441,12 @@ body > main {
   text-overflow: ellipsis;
 }
 
-@media (print) {
+@media print {
   body > header,
   body > footer {
     display: none !important;
   }
-}
 
-@media print {
   body > main {
     box-shadow: unset !important;
     width: 100%;
