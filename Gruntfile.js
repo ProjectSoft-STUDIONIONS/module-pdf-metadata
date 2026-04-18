@@ -331,7 +331,8 @@ module.exports = function(grunt) {
 						return {
 							"description": `${PACK.description}`,
 							"version": `v${PACK.version}`,
-							"hash": `=` + grunt.template.date(new Date().getTime(), `yyyy-mm-dd'T'HH-MM-ss'Z'`),
+							//"hash": `=` + grunt.template.date(new Date().getTime(), `yyyy-mm-dd'T'HH-MM-ss'Z'`),
+							"hash": `=` + URL.createObjectURL(new Blob([])).slice(-36).toLowerCase().replace(/-/g, ''),
 						}
 					},
 				},
