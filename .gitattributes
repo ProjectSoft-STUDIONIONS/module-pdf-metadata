@@ -23,6 +23,7 @@
 /LICENSE export-ignore
 /README.md export-ignore
 /src export-ignore
+/docs export-ignore
 /*.zip export-ignore
 /*.inf export-ignore
 /*.ini export-ignore
