@@ -5,7 +5,7 @@
 	height: 100vh;
 	margin: 2em auto;
 	padding: 30px;
-	background-color: var(--white);
+	background-color: var(--white-module);
 	border-radius: 9px;
 	transition: height 0.2s ease;
 	box-shadow: 0 0 6px var(--box-shadow);
@@ -75,7 +75,7 @@
 				&.btn {
 					margin: 20px 7px 0;
 					padding: 15px 20px;
-					color: var(--white);
+					color: var(--white-module);
 					outline: none;
 					border: none;
 					cursor: pointer;
@@ -87,14 +87,14 @@
 						outline: var(--outline-btn) solid 3px;
 					}
 					&.download-btn {
-						background-color: var(--blue);
-						color: var(--white);
-						box-shadow: inset 0 0 1px 2px var(--blue);
+						background-color: var(--blue-module);
+						color: var(--white-module);
+						box-shadow: inset 0 0 1px 2px var(--blue-module);
 					}
 					&.cancel-btn {
-						background-color: var(--white);
-						color: var(--blue);
-						box-shadow: inset 0 0 1px 2px var(--blue);
+						background-color: var(--white-module);
+						color: var(--blue-module);
+						box-shadow: inset 0 0 1px 2px var(--blue-module);
 					}
 				}
 			}
@@ -112,7 +112,7 @@
 				font-size: 1.06rem;
 				background-color: transparent;
 				font-weight: 700;
-				color: var(--black);
+				color: var(--black-module);
 				user-select: none;
 				position: absolute;
 				pointer-events: none;
@@ -144,7 +144,7 @@
 				border: 2px solid var(--upload-border);
 				font-family: 'Montserrat', sans-serif;
 				&:focus {
-					border: 2px solid var(--blue);
+					border: 2px solid var(--blue-module);
 				}
 				&::placeholder {
 					color: transparent !important;
@@ -183,15 +183,15 @@
 				pointer-events: none;
 			}
 			p {
-				color: var(--white);
+				color: var(--white-module);
 			}
 		}
 		&.error {
 			background-color: var(--error-background);
 			.upload-box {
-				border: 2px dashed var(--white);
+				border: 2px dashed var(--white-module);
 				p {
-					color: var(--white);
+					color: var(--white-module);
 					&::after {
 						content: attr(data-after-error);
 					}

@@ -1,12 +1,12 @@
 :root {
-  --white: #fff;
+  --white-module: #fff;
   --hover-upload-border: #ebebeb;
   --upload-border: #afafaf;
   --hover-background: #979797;
   --box-shadow: #515151;
-  --black: #000;
+  --black-module: #000;
   --error-background: #f00;
-  --blue: #927DFC;
+  --blue-module: #927DFC;
   --outline-btn: #524893;
 }
 
@@ -115,7 +115,7 @@ footer p {
   height: 100vh;
   margin: 2em auto;
   padding: 30px;
-  background-color: var(--white);
+  background-color: var(--white-module);
   border-radius: 9px;
   transition: height 0.2s ease;
   box-shadow: 0 0 6px var(--box-shadow);
@@ -211,7 +211,7 @@ footer p {
 .wrapper .content .row .column.btn {
   margin: 20px 7px 0;
   padding: 15px 20px;
-  color: var(--white);
+  color: var(--white-module);
   outline: none;
   border: none;
   cursor: pointer;
@@ -228,15 +228,15 @@ footer p {
 }
 
 .wrapper .content .row .column.btn.download-btn {
-  background-color: var(--blue);
-  color: var(--white);
-  box-shadow: inset 0 0 1px 2px var(--blue);
+  background-color: var(--blue-module);
+  color: var(--white-module);
+  box-shadow: inset 0 0 1px 2px var(--blue-module);
 }
 
 .wrapper .content .row .column.btn.cancel-btn {
-  background-color: var(--white);
-  color: var(--blue);
-  box-shadow: inset 0 0 1px 2px var(--blue);
+  background-color: var(--white-module);
+  color: var(--blue-module);
+  box-shadow: inset 0 0 1px 2px var(--blue-module);
 }
 
 .wrapper .meta .column {
@@ -253,7 +253,7 @@ footer p {
   font-size: 1.06rem;
   background-color: transparent;
   font-weight: 700;
-  color: var(--black);
+  color: var(--black-module);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -293,7 +293,7 @@ footer p {
 
 .wrapper .meta .column input:focus,
 .wrapper .meta .column textarea:focus {
-  border: 2px solid var(--blue);
+  border: 2px solid var(--blue-module);
 }
 
 .wrapper .meta .column input:-ms-input-placeholder,
@@ -351,7 +351,7 @@ footer p {
 }
 
 .wrapper.hover .upload-box p {
-  color: var(--white);
+  color: var(--white-module);
 }
 
 .wrapper.hover.error {
@@ -359,11 +359,11 @@ footer p {
 }
 
 .wrapper.hover.error .upload-box {
-  border: 2px dashed var(--white);
+  border: 2px dashed var(--white-module);
 }
 
 .wrapper.hover.error .upload-box p {
-  color: var(--white);
+  color: var(--white-module);
 }
 
 .wrapper.hover.error .upload-box p::after {
