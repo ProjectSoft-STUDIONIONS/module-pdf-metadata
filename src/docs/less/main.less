@@ -19,7 +19,7 @@
 	box-sizing: border-box;
 }
 
-.clearfix {
+.clearfix() {
 	&::before,
 	&::after {
 		content: "";
@@ -60,6 +60,9 @@ body {
 		a {
 			color: #ffffff;
 			outline: none !important;
+		}
+		@media(print) {
+			display: none !important;
 		}
 	}
 	> header {
@@ -110,6 +113,11 @@ body {
 		background-color: #ffffff;
 		box-shadow: 0 0 40px #ccc;
 		z-index: 1;
+		@media print {
+			box-shadow: unset !important;
+			width: 100%;
+			max-width: 100%;
+		}
 	}
 }
 

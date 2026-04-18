@@ -39,38 +39,35 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 				|На данной странице вы сможете так же отредактировать метаданные PDF файла.
 			p
 				|Перетещите PDF файл на блок ниже для загрузки на редактирование.
-			div.clearfix
-				<div class="wrapper">
-					<div class="upload-box">
-						<input type="file" accept="application/pdf" hidden>
-						<img src="images/upload-icon.svg" alt="">
-						<p data-after-error="Ошибка. Файл не поддерживается.">Загрузите PDF</p>
-					</div>
-					<div class="content">
-						<div class="meta">
-							<div class="column meta-title">
-								<input type="text" id="title" value="" placeholder="Заголовок">
-								<label>Заголовок</label>
-							</div>
-							<div class="column meta-subject">
-								<input type="text" id="subject" value="" placeholder="Тема">
-								<label>Тема</label>
-							</div>
-							<div class="column meta-keywords">
-								<input type="text" id="keywords" value="" placeholder="Ключевые слова">
-								<label>Ключевые слова</label>
-							</div>
-							<div class="column meta-author">
-								<input type="text" id="author" value="" placeholder="Автор">
-								<label>Автор</label>
-							</div>
-						</div>
-						<div class="row buttons">
-							<button class="column download-btn btn">Скачать PDF</button>
-							<button class="column cancel-btn btn">Начать заново</button>
-						</div>
-					</div>
-				</div>
+			.wrapper
+				.upload-box
+					input(type="file" accept="application/pdf" hidden)
+					img(src="images/upload-icon.svg" alt="")
+					p(data-after-error="Ошибка. Файл не поддерживается.")
+						|Загрузите PDF
+				.content
+					.meta
+						.column.meta-title
+							input(type="text" id="title" value="" placeholder="Заголовок")
+							label
+								|Заголовок
+						.column.meta-subject
+							input(type="text" id="subject" value="" placeholder="Тема")
+							label
+								|Тема
+						.column.meta-keywords
+							input(type="text" id="keywords" value="" placeholder="Ключевые слова")
+							label
+								|Ключевые слова
+						.column.meta-author
+							input(type="text" id="author" value="" placeholder="Автор")
+							label
+								|Автор
+					.row.buttons
+						button.column.download-btn.btn
+							|Скачать PDF
+						button.column.cancel-btn.btn
+							|Начать заново
 		footer
 			p
 				a(href="https://github.com/ProjectSoft-STUDIONIONS" target="_blank")
