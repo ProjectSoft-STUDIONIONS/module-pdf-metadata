@@ -1,6 +1,6 @@
 {
 	"name": "module-pdf-metadata",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Модуль PDF Metadata Editor для EvolutionCMS. Модудь предназначен для редактирования метаданных PDF файла.",
 	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata#readme",
 	"bugs": {
@@ -25,6 +25,7 @@
 		"inst": "npm i",
 		"build": "grunt -v",
 		"page": "grunt -v page",
+		"full": "grunt -v full",
 		"preinstall": "npm i -g less bower && bower install",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

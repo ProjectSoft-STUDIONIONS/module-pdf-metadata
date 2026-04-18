@@ -8,13 +8,14 @@
 @blue:                       #927DFC;
 @outline-btn:                #524893;
 
+@import "montserrat";
+
 @font-face {
 	font-display: swap;
 	font-family: 'Nunito Sans';
 	font-style: normal;
 	font-weight: 400;
 	src: url("@{fontpath}/NunitoSans-Regular.woff2") format("woff2"),
-		url("@{fontpath}/NunitoSans-Regular.woff") format("woff"),
 		url("@{fontpath}/NunitoSans-Regular.ttf") format("truetype");
 }
 
@@ -22,7 +23,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -30,6 +30,7 @@ body {
 	min-height: 100vh;
 	width: 100%;
 	flex-direction: column;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 footer,
@@ -66,186 +67,4 @@ footer p {
 	justify-content: center;
 }
 
-.wrapper {
-	width: ~'calc(100% - 15px)';
-	max-width: 655px;
-	min-height: 393px;
-	padding: 30px;
-	background-color: @white;
-	border-radius: 9px;
-	transition: height 0.2s ease;
-	box-shadow: 0 0 6px @box-shadow;
-	transition: max-width .4s ease;
-	display: flex;
-	flex-direction: column;
-	.upload-box,
-	.content {
-		border-radius: 5px;
-		border: 2px dashed #afafaf;
-		flex: 1 0 auto;
-	}
-	.upload-box {
-		//height: 225px;
-		display: flex;
-		cursor: pointer;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		user-select: none;
-		p {
-			position: relative;
-			font-size: 1.06rem;
-			margin-top: 20px;
-			pointer-events: none;
-			&::after {
-				content: "";
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				transform: translateX(-50%);
-				text-align: center;
-				white-space: nowrap;
-				pointer-events: none;
-			}
-		}
-	}
-	.content {
-		display: none;
-		pointer-events: none;
-		padding: 1rem;
-		.row {
-			display: flex;
-			justify-content: center;
-			margin: 0;
-			.column {
-				&.btn {
-					margin: 20px 7px 0;
-					padding: 15px 20px;
-					color: @white;
-					outline: none;
-					border: none;
-					cursor: pointer;
-					font-size: 1.06rem;
-					border-radius: 5px;
-					user-select: none;
-					&:focus,
-					&:focus-visible {
-						outline: @outline-btn solid 3px;
-					}
-					&.download-btn {
-						background-color: @blue;
-						color: @white;
-						box-shadow: inset 0 0 1px 2px @blue;
-					}
-					&.cancel-btn {
-						background-color: @white;
-						color: @blue;
-						box-shadow: inset 0 0 1px 2px @blue;
-					}
-				}
-			}
-		}
-	}
-	.meta {
-		.column {
-			margin-bottom: 10px;
-			position: relative;
-			&:last-child {
-				margin-bottom: 0px;
-			}
-			label {
-				font-size: 1.06rem;
-				background-color: transparent;
-				font-weight: 700;
-				color: @black;
-				user-select: none;
-				position: absolute;
-				pointer-events: none;
-				z-index: 10;
-				top: 1rem;
-				left: 1rem;
-				line-height: 1;
-				white-space: nowrap;
-				margin: unset;
-				margin-bottom: unset;
-				transition: top .3s ease, font-size .3s ease;
-			}
-			input {
-				height: 49px;
-			}
-			textarea {
-				min-height: 80px;
-				resize: vertical;
-			}
-			input,
-			textarea {
-				display: block;
-				appearance: none;
-				width: 100%;
-				outline: none;
-				padding: 1rem 1rem 0em;
-				font-size: 1.06rem;
-				border-radius: 4px;
-				border: 2px solid @upload-border;
-				&:focus {
-					border: 2px solid @blue;
-				}
-				&::placeholder {
-					color: transparent !important;
-					user-select: none !important;
-				}
-				&:hover,
-				&:focus,
-				&:not(:placeholder-shown) {
-					~ label {
-						font-size: 0.86rem;
-						top: 0.4rem;
-						background-color: transparent;
-					}
-				}
-			}
-		}
-	}
-	&.active {
-		height: auto;
-		max-width: ~'calc(100% - 15px)';
-		transition: max-width 1s ease;
-		.upload-box {
-			display: none;
-		}
-		.content {
-			display: block;
-			pointer-events: auto;
-			transition: opacity 0.5s 0.05s ease;
-		}
-	}
-	&.hover {
-		background-color: @hover-background;
-		.upload-box {
-			border: 2px dashed @hover-upload-border;
-			* {
-				pointer-events: none;
-			}
-			p {
-				color: @white;
-			}
-		}
-		&.error {
-			background-color: @error-background;
-			.upload-box {
-				border: 2px dashed @white;
-				p {
-					color: @white;
-					&::after {
-						content: attr(data-after-error);
-					}
-				}
-			}
-		}
-	}
-	button {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-}
+@import "wrapper";

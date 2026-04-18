@@ -14,9 +14,15 @@
 	},
 	"build_systems": [
 		{
-			"name": "Запуск сборки проекта",
+			"name": "Запуск полной сборки проекта",
 			"working_dir": "${project_path}",
-			"cmd": ["start", "/wait", "grunt", "-v"],
+			"cmd": ["start", "/wait", "npm", "run", "full"],
+			"shell": true
+		},
+		{
+			"name": "Запуск сборки модуля",
+			"working_dir": "${project_path}",
+			"cmd": ["start", "/wait", "npm", "run", "build"],
 			"shell": true
 		},
 		{

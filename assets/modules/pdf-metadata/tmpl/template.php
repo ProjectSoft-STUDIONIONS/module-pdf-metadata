@@ -38,6 +38,14 @@ $mod_path = filemtime( $mod_path . "js/main.min.js"    );
 					<input type="text" id="author" value="" placeholder="<?= $lang_module['pdf_meta_meta_author']; ?>">
 					<label><?= $lang_module['pdf_meta_meta_author']; ?></label>
 				</div>
+				<div class="column meta-creator">
+					<input type="text" id="creator" value="" placeholder="<?= $lang_module['pdf_meta_meta_creator'];?>">
+					<label><?= $lang_module['pdf_meta_meta_creator'];?></label>
+				</div>
+				<div class="column meta-author">
+					<input type="text" id="producer" value="" placeholder="<?= $lang_module['pdf_meta_meta_produser'];?>">
+					<label><?= $lang_module['pdf_meta_meta_produser'];?></label>
+				</div>
 			</div>
 			<div class="row buttons">
 				<button class="column download-btn btn"><?= $lang_module['pdf_meta_download_btn']; ?></button>

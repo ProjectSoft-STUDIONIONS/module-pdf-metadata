@@ -8,6 +8,8 @@
 		title = document.querySelector("#title"),
 		subject = document.querySelector("#subject"),
 		author = document.querySelector("#author"),
+		producer = document.querySelector("#producer"),
+		creator = document.querySelector("#creator"),
 		keywords = document.querySelector("#keywords"),
 		resetFileInput = () => {
 			fileInput.type = "text";
@@ -24,6 +26,8 @@
 			subject.value = "";
 			author.value = "";
 			keywords.value = "";
+			producer.value = "";
+			creator.value = "";
 		},
 		loadFile = (file) => {
 			dropZone.classList.remove("hover");
@@ -67,12 +71,16 @@
 			subject.value = pdfDocument.getSubject() ? pdfDocument.getSubject() : "";
 			author.value = pdfDocument.getAuthor() ? pdfDocument.getAuthor() : "";
 			keywords.value = pdfDocument.getKeywords() ? pdfDocument.getKeywords() : "";
+			producer.value = pdfDocument.getProducer() ? pdfDocument.getProducer() : "";
+			creator.value = pdfDocument.getCreator() ? pdfDocument.getCreator() : "";
 		},
 		downloadBtnEvent = async (e) => {
 			if(pdfDocument){
 				pdfDocument.setTitle(title.value);
 				pdfDocument.setSubject(subject.value);
 				pdfDocument.setAuthor(author.value);
+				pdfDocument.setProducer(producer.value);
+				pdfDocument.setCreator(creator.value);
 				let keys = keywords.value.split(",");
 				pdfDocument.setKeywords(keys);
 				let pdfBytes = await pdfDocument.save();

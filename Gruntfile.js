@@ -31,6 +31,19 @@ module.exports = function(grunt) {
 				"cssmin:page",
 				"pug:page",
 			],
+			full: [
+				"clean",
+				"copy",
+				"concat",
+				"uglify",
+				"less",
+				"autoprefixer",
+				"group_css_media_queries",
+				"cssmin",
+				"pug",
+				"replace",
+				"compress",
+			],
 		};
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
@@ -53,13 +66,26 @@ module.exports = function(grunt) {
 		},
 		copy: {
 			main: {
-				expand: true,
-				cwd: 'node_modules/pdf-lib/dist',
-				src: [
-					'pdf-lib.min.js',
-					'pdf-lib.min.js.map',
+				files: [
+					{
+						expand: true,
+						cwd: 'node_modules/pdf-lib/dist',
+						src: [
+							'pdf-lib.min.js',
+							'pdf-lib.min.js.map',
+						],
+						dest: '<%= globalConfig.gosave %>/js/',
+					},
+					{
+						expand: true,
+						cwd: 'src/docs/fonts',
+						src: [
+							'Montserrat-*.*',
+							'NunitoSans-*.*',
+						],
+						dest: '<%= globalConfig.gosave %>/fonts/',
+					},
 				],
-				dest: '<%= globalConfig.gosave %>/js/',
 			},
 			page: {
 				files: [
@@ -323,4 +349,5 @@ module.exports = function(grunt) {
 	});
 	grunt.registerTask('default',	gc.default);
 	grunt.registerTask('page',	gc.page);
+	grunt.registerTask('full',	gc.full);
 }
