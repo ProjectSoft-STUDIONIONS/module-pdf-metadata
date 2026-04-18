@@ -1,7 +1,7 @@
 {
 	"name": "module-pdf-metadata",
 	"version": "1.0.3",
-	"description": "Модуль Evolution CMS для редактирования метаданных PDF файла",
+	"description": "Модуль PDF Metadata Editor для EvolutionCMS. Модудь предназначен для редактирования метаданных PDF файла.",
 	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata#readme",
 	"bugs": {
 		"url": "https://github.com/ProjectSoft-STUDIONIONS/module-pdf-metadata/issues"
@@ -36,6 +36,7 @@
 		"grunt-contrib-copy": "^1.0.0",
 		"grunt-contrib-cssmin": "^5.0.0",
 		"grunt-contrib-less": "^3.0.0",
+		"grunt-contrib-pug": "^3.0.0",
 		"grunt-contrib-uglify-es": "^3.3.0",
 		"grunt-group-css-media-queries": "^1.0.1",
 		"grunt-replace": "^2.0.2",

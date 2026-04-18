@@ -18,6 +18,12 @@
 			"working_dir": "${project_path}",
 			"cmd": ["start", "/wait", "grunt", "-v"],
 			"shell": true
+		},
+		{
+			"name": "Запуск сборки страницы",
+			"working_dir": "${project_path}",
+			"cmd": ["start", "/wait", "grunt", "-v", "page"],
+			"shell": true
 		}
 	]
 }

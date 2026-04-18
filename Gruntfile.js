@@ -9,16 +9,27 @@ module.exports = function(grunt) {
 			assets: "assets/modules/pdf-metadata",
 			gosave: "assets/modules/pdf-metadata",
 			default: [
-				"clean",
-				"copy",
-				"concat",
-				"uglify",
-				"less",
-				"autoprefixer",
-				"group_css_media_queries",
-				"cssmin",
-				"replace",
-				"compress",
+				"clean:main",
+				"copy:main",
+				"concat:main",
+				"uglify:main",
+				"less:main",
+				"autoprefixer:main",
+				"group_css_media_queries:main",
+				"cssmin:main",
+				"replace:main",
+				"compress:main",
+			],
+			page: [
+				"clean:page",
+				"copy:page",
+				"concat:page",
+				"uglify:page",
+				"less:page",
+				"autoprefixer:page",
+				"group_css_media_queries:page",
+				"cssmin:page",
+				"pug:page",
 			],
 		};
 	require('load-grunt-tasks')(grunt);
@@ -35,9 +46,13 @@ module.exports = function(grunt) {
 				'tests/',
 				'module-pdf-metadata.zip',
 			],
+			page: [
+				'test/',
+				'tests/',
+			],
 		},
 		copy: {
-			js: {
+			main: {
 				expand: true,
 				cwd: 'node_modules/pdf-lib/dist',
 				src: [
@@ -45,6 +60,43 @@ module.exports = function(grunt) {
 					'pdf-lib.min.js.map',
 				],
 				dest: '<%= globalConfig.gosave %>/js/',
+			},
+			page: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/docs/js',
+						src: [
+							'main.js',
+						],
+						dest: 'docs/js/',
+					},
+					{
+						expand: true,
+						cwd: 'src/docs/fonts',
+						src: [
+							'*.*',
+						],
+						dest: 'docs/fonts/',
+					},
+					{
+						expand: true,
+						cwd: 'node_modules/pdf-lib/dist',
+						src: [
+							'pdf-lib.min.js',
+							'pdf-lib.min.js.map',
+						],
+						dest: 'docs/js/',
+					},
+					{
+						expand: true,
+						cwd: 'assets/modules/pdf-metadata/images/',
+						src: [
+							'*.svg',
+						],
+						dest: 'docs/images/',
+					},
+				],
 			},
 		},
 		concat: {
@@ -57,6 +109,13 @@ module.exports = function(grunt) {
 				],
 				dest: '<%= globalConfig.gosave %>/js/main.js',
 			},
+			page: {
+				src: [
+					'src/js/main.js',
+					'src/docs/js/main.js',
+				],
+				dest: 'docs/js/main.js',
+			}
 		},
 		uglify: {
 			options: {
@@ -84,9 +143,25 @@ module.exports = function(grunt) {
 					},
 				],
 			},
+			page: {
+				files: [
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'docs/js/main.js',
+						],
+						dest: 'docs/js',
+						filter: 'isFile',
+						rename: function (dst, src) {
+							return dst + '/' + src.replace('.js', '.min.js');
+						},
+					},
+				],
+			},
 		},
 		less: {
-			css: {
+			main: {
 				options : {
 					compress: false,
 					ieCompat: false,
@@ -103,6 +178,23 @@ module.exports = function(grunt) {
 					],
 				},
 			},
+			page: {
+				options : {
+					compress: false,
+					ieCompat: false,
+					plugins: [],
+					modifyVars: {
+						//'hashes': versions + update,
+						'fontpath': '../fonts',
+						'imgpath': 'images',
+					},
+				},
+				files : {
+					'docs/css/main.css' : [
+						'src/docs/less/main.less',
+					],
+				},
+			},
 		},
 		autoprefixer:{
 			options: {
@@ -111,18 +203,30 @@ module.exports = function(grunt) {
 				],
 				cascade: true,
 			},
-			css: {
+			main: {
 				files: {
 					'test/css/main.css' : [
 						'test/css/main.css',
 					],
 				},
 			},
+			page: {
+				files: {
+					'docs/css/main.css' : [
+						'docs/css/main.css',
+					],
+				},
+			},
 		},
 		group_css_media_queries: {
-			group: {
+			main: {
 				files: {
 					'<%= globalConfig.gosave %>/css/main.css': ['test/css/main.css'],
+				},
+			},
+			page: {
+				files: {
+					'docs/css/main.css' : ['docs/css/main.css'],
 				},
 			},
 		},
@@ -134,6 +238,11 @@ module.exports = function(grunt) {
 			main: {
 				files: {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['<%= globalConfig.gosave %>/css/main.css'],
+				},
+			},
+			page: {
+				files: {
+					'docs/css/main.min.css' : ['docs/css/main.css'],
 				},
 			},
 		},
@@ -148,6 +257,10 @@ module.exports = function(grunt) {
 						{
 							match: /{date}/g,
 							replacement: grunt.template.date(new Date().getTime(), 'yyyy-mm-dd'),
+						},
+						{
+							match: /{description}/g,
+							replacement: `${PACK.description}`,
 						},
 					],
 				},
@@ -181,6 +294,33 @@ module.exports = function(grunt) {
 				],
 			},
 		},
+		pug: {
+			page: {
+				options: {
+					doctype: 'html',
+					client: false,
+					pretty: "", //"\t",
+					separator:  "", //"\n",
+					data: function(dest, src) {
+						return {
+							"description": `${PACK.description}`,
+							"version": `v${PACK.version}`,
+							"hash": `=` + grunt.template.date(new Date().getTime(), `yyyy-mm-dd'T'HH-MM-ss'Z'`),
+						}
+					},
+				},
+				files: [
+					{
+						expand: true,
+						cwd: __dirname + '/src/docs/pug/',
+						src: [ '*.pug' ],
+						dest: __dirname + '/docs/',
+						ext: '.html',
+					},
+				],
+			},
+		},
 	});
 	grunt.registerTask('default',	gc.default);
+	grunt.registerTask('page',	gc.page);
 }

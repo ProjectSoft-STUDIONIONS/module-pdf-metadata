@@ -1,7 +1,7 @@
 /**
  * PDF Metadata Editor
  *
- * Модуль Evolution CMS для редактирования метаданных PDF файла.
+ * Модуль PDF Metadata Editor для EvolutionCMS. Редактирования метаданных PDF файла.
  *
  * @category     module
  * @version      1.0.3
@@ -18,7 +18,7 @@
 /**
  * PDF Metadata Editor
  *
- * Модуль Evolution CMS для редактирования метаданных PDF файла.
+ * Модуль PDF Metadata Editor для EvolutionCMS. Редактирования метаданных PDF файла.
  *
  * @category     module
  * @version      1.0.3
