@@ -40,8 +40,8 @@ $mod_path = filemtime( $mod_path . "js/main.min.js"    );
 				</div>
 			</div>
 			<div class="row buttons">
-				<button class="column download-btn"><?= $lang_module['pdf_meta_download_btn']; ?></button>
-				<button class="column cancel-btn"><?= $lang_module['pdf_meta_cancel_btn']; ?></button>
+				<button class="column download-btn btn"><?= $lang_module['pdf_meta_download_btn']; ?></button>
+				<button class="column cancel-btn btn"><?= $lang_module['pdf_meta_cancel_btn']; ?></button>
 			</div>
 		</div>
 	</div>

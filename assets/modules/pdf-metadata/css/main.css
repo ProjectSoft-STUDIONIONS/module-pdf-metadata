@@ -65,15 +65,15 @@ footer p {
 }
 
 .wrapper {
+  width: calc(100% - 15px);
   max-width: 655px;
-  width: 97%;
-  min-height: 415px;
+  min-height: 393px;
   padding: 30px;
   background-color: #fff;
   border-radius: 9px;
   transition: height 0.2s ease;
   box-shadow: 0 0 6px #515151;
-  transition: unset;
+  transition: max-width 0.4s ease;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -131,13 +131,40 @@ footer p {
 .wrapper .content .row {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
 }
 
-.wrapper .content .row .column {
-  width: calc(100% / 2 - 15px);
+.wrapper .content .row .column.btn {
+  margin: 20px 7px 0;
+  padding: 15px 20px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.06rem;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wrapper .content .row .column.btn:focus,
+.wrapper .content .row .column.btn:focus-visible {
+  outline: #524893 solid 3px;
+}
+
+.wrapper .content .row .column.btn.download-btn {
+  background-color: #927DFC;
+  color: #fff;
+  box-shadow: inset 0 0 1px 2px #927DFC;
+}
+
+.wrapper .content .row .column.btn.cancel-btn {
+  background-color: #fff;
+  color: #927DFC;
+  box-shadow: inset 0 0 1px 2px #927DFC;
 }
 
 .wrapper .meta .column {
@@ -223,7 +250,7 @@ footer p {
 
 .wrapper.active {
   height: auto;
-  max-width: 90%;
+  max-width: calc(100% - 15px);
   transition: max-width 1s ease;
 }
 
@@ -267,37 +294,6 @@ footer p {
 
 .wrapper.hover.error .upload-box p::after {
   content: attr(data-after-error);
-}
-
-.wrapper .buttons .column {
-  color: #fff;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.06rem;
-  border-radius: 5px;
-  padding: 15px 10px;
-  margin: 30px 0 10px;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.wrapper .buttons .column:focus,
-.wrapper .buttons .column:focus-visible {
-  outline: #524893 solid 3px;
-}
-
-.wrapper .buttons .download-btn {
-  background-color: #927DFC;
-  color: #fff;
-  box-shadow: inset 0 0 1px 2px #927DFC;
-}
-
-.wrapper .buttons .cancel-btn {
-  background-color: #fff;
-  color: #927DFC;
-  box-shadow: inset 0 0 1px 2px #927DFC;
 }
 
 .wrapper button {
