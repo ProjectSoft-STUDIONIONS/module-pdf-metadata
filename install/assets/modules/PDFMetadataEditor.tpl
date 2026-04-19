@@ -4,7 +4,7 @@
  * Модуль PDF Metadata Editor для EvolutionCMS. Модудь предназначен для редактирования метаданных PDF файла.
  *
  * @category     module
- * @version      1.0.4
+ * @version      1.0.5
  * @internal     @modx_category Manager and Admin
  * @internal     @properties
  * @internal     @icon fa fa-file-pdf
@@ -21,7 +21,7 @@
  * Модуль PDF Metadata Editor для EvolutionCMS. Модудь предназначен для редактирования метаданных PDF файла.
  *
  * @category     module
- * @version      1.0.4
+ * @version      1.0.5
  * @internal     @modx_category Manager and Admin
  * @internal     @properties
  * @internal     @icon fa fa-file-pdf

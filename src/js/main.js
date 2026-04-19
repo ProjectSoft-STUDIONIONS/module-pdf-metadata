@@ -83,6 +83,8 @@
 				pdfDocument.setCreator(creator.value);
 				let keys = keywords.value.split(",");
 				pdfDocument.setKeywords(keys);
+				pdfDocument.catalog.getOrCreateViewerPreferences().setDisplayDocTitle(true);
+
 				let pdfBytes = await pdfDocument.save();
 				let blob = new Blob([pdfBytes], { type: "application/pdf" });
 				let downloadElement = document.createElement("a");

@@ -79,6 +79,7 @@ footer,
 .pagetitle {
   pointer-events: none;
   margin-bottom: 1.6rem;
+  font-weight: 700;
 }
 
 footer {
